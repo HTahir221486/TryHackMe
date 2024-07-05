@@ -380,6 +380,6 @@ Flag3: `flag{admin_documents_can_be_valuable}`
 
 ---
 
-***Try it to Crack it*** **; )**
+***Try and Crack it*** **; )**
 
 ---
