@@ -1,10 +1,17 @@
 ```jsx
-MAchine Name:  Blue
+Machine Name:  Blue
 Platform:  TryHackMe
 Difficulty:  Easy
 ```
 
+### Walkthrough:
 
+You can find the machine [here](https://tryhackme.com/r/room/blue).
+
+### Recon:
+
+```console
+Lets start the things by a simple Nmap vulnerability scan. By `vuln` runs `sudo nmap -sS -sC -sV -vv --script vuln $IP` command.
 
 ┌──(husnain㉿husnain)-[~]
 └─$ sudo nmap -sV -sC -vv --script vuln 10.10.194.57
@@ -97,6 +104,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 307.04 seconds
            Raw packets sent: 1120 (49.256KB) | Rcvd: 1067 (42.724KB)
 ---------------------------------------------------------------------------
+```
 
                                                                                                                    
 ┌──(husnain㉿husnain)-[~]
