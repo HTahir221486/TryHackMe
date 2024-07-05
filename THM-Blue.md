@@ -106,103 +106,10 @@ Read data files from: /usr/bin/../share/nmap
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 307.04 seconds
            Raw packets sent: 1120 (49.256KB) | Rcvd: 1067 (42.724KB)
----------------------------------------------------------------------------
+
 ```
 
 
-```console
-
-┌──(husnain㉿husnain)-[~]
-└─$ sudo nmap -sV -sC -vv --script vuln 10.10.194.57
-Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-07-05 16:52 PKT
-NSE: Loaded 150 scripts for scanning.
-NSE: Script Pre-scanning.
-NSE: Starting runlevel 1 (of 2) scan.
-Initiating NSE at 16:52
-Completed NSE at 16:52, 10.04s elapsed
-NSE: Starting runlevel 2 (of 2) scan.
-Initiating NSE at 16:52
-Completed NSE at 16:52, 0.00s elapsed
-Initiating Ping Scan at 16:52
-Scanning 10.10.194.57 [4 ports]
-Completed Ping Scan at 16:52, 0.34s elapsed (1 total hosts)
-Initiating Parallel DNS resolution of 1 host. at 16:52
-Completed Parallel DNS resolution of 1 host. at 16:52, 0.02s elapsed
-Initiating SYN Stealth Scan at 16:52
-Scanning 10.10.194.57 [1000 ports]
-Discovered open port 135/tcp on 10.10.194.57
-Discovered open port 3389/tcp on 10.10.194.57
-Discovered open port 445/tcp on 10.10.194.57
-Discovered open port 139/tcp on 10.10.194.57
-Discovered open port 49153/tcp on 10.10.194.57
-Discovered open port 49158/tcp on 10.10.194.57
-Discovered open port 49159/tcp on 10.10.194.57
-Discovered open port 49152/tcp on 10.10.194.57
-Discovered open port 49154/tcp on 10.10.194.57
-Completed SYN Stealth Scan at 16:53, 44.62s elapsed (1000 total ports)
-Initiating Service scan at 16:53
-Scanning 9 services on 10.10.194.57
-Service scan Timing: About 44.44% done; ETC: 16:55 (0:01:15 remaining)
-Completed Service scan at 16:55, 133.63s elapsed (9 services on 1 host)
-NSE: Script scanning 10.10.194.57.
-NSE: Starting runlevel 1 (of 2) scan.
-Initiating NSE at 16:55
-NSE Timing: About 99.91% done; ETC: 16:56 (0:00:00 remaining)
-NSE Timing: About 99.91% done; ETC: 16:56 (0:00:00 remaining)
-NSE Timing: About 99.91% done; ETC: 16:57 (0:00:00 remaining)
-Completed NSE at 16:57, 93.71s elapsed
-NSE: Starting runlevel 2 (of 2) scan.
-Initiating NSE at 16:57
-NSE: [ssl-ccs-injection 10.10.194.57:3389] No response from server: ERROR
-Completed NSE at 16:57, 24.06s elapsed
-Nmap scan report for 10.10.194.57
-Host is up, received reset ttl 125 (0.31s latency).
-Scanned at 2024-07-05 16:52:37 PKT for 296s
-Not shown: 991 closed tcp ports (reset)
-PORT      STATE SERVICE            REASON          VERSION
-135/tcp   open  msrpc              syn-ack ttl 125 Microsoft Windows RPC
-139/tcp   open  netbios-ssn        syn-ack ttl 125 Microsoft Windows netbios-ssn
-445/tcp   open  microsoft-ds       syn-ack ttl 125 Microsoft Windows 7 - 10 microsoft-ds (workgroup: WORKGROUP)
-3389/tcp  open  ssl/ms-wbt-server? syn-ack ttl 125
-|_ssl-ccs-injection: No reply from server (TIMEOUT)
-49152/tcp open  msrpc              syn-ack ttl 125 Microsoft Windows RPC
-49153/tcp open  msrpc              syn-ack ttl 125 Microsoft Windows RPC
-49154/tcp open  msrpc              syn-ack ttl 125 Microsoft Windows RPC
-49158/tcp open  msrpc              syn-ack ttl 125 Microsoft Windows RPC
-49159/tcp open  msrpc              syn-ack ttl 125 Microsoft Windows RPC
-Service Info: Host: JON-PC; OS: Windows; CPE: cpe:/o:microsoft:windows
-
-Host script results:
-|_smb-vuln-ms10-061: NT_STATUS_ACCESS_DENIED
-| smb-vuln-ms17-010: 
-|   VULNERABLE:
-|   Remote Code Execution vulnerability in Microsoft SMBv1 servers (ms17-010)
-|     State: VULNERABLE
-|     IDs:  CVE:CVE-2017-0143
-|     Risk factor: HIGH
-|       A critical remote code execution vulnerability exists in Microsoft SMBv1
-|        servers (ms17-010).
-|           
-|     Disclosure date: 2017-03-14
-|     References:
-|       https://technet.microsoft.com/en-us/library/security/ms17-010.aspx
-|       https://blogs.technet.microsoft.com/msrc/2017/05/12/customer-guidance-for-wannacrypt-attacks/
-|_      https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-0143
-|_smb-vuln-ms10-054: false
-|_samba-vuln-cve-2012-1182: NT_STATUS_ACCESS_DENIED
-
-NSE: Script Post-scanning.
-NSE: Starting runlevel 1 (of 2) scan.
-Initiating NSE at 16:57
-Completed NSE at 16:57, 0.00s elapsed
-NSE: Starting runlevel 2 (of 2) scan.
-Initiating NSE at 16:57
-Completed NSE at 16:57, 0.00s elapsed
-Read data files from: /usr/bin/../share/nmap
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 307.04 seconds
-           Raw packets sent: 1120 (49.256KB) | Rcvd: 1067 (42.724KB)
-```
 From the scan result it is evident that the machine is vulnerabile to `ms17-010`.
 
 ```console
