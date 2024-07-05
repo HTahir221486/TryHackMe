@@ -336,7 +336,7 @@ alqfna22         (?)
 Use the "--show --format=NT" options to display all of the cracked passwords reliably
 Session completed.
 ```
-Password was `alqfna22`.
+Password: `alqfna22`.
 
 ### Flag1
 You'll find first flag in `system32`
